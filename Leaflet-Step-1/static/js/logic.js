@@ -63,9 +63,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_w
     else if (magnitude > 2) {
       color = "#fab009";
     }
-    // else {
-    //     color = "#ffcc00"
-    // }
+   
 
     var latitude = earthquakeData[i].geometry.coordinates[1];
     var longitude = earthquakeData[i].geometry.coordinates[0];
@@ -73,7 +71,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_w
     var location = (`${latitude}, ${longitude}`);
     console.log(location);
     var url = earthquakeData[i].properties.url;
-    var urlLink = (`<a target='_blank' href="${url}"> Click here for more Info</a>`)
+    var urlLink = (`<a target='_blank' href="${url}"> Click for Info</a>`)
     console.log(urlLink);
 
     L.circle([earthquakeData[i].geometry.coordinates[1], earthquakeData[i].geometry.coordinates[0]], {
